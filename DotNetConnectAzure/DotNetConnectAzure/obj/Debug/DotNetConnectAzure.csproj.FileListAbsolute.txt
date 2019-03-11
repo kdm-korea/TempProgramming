@@ -1,0 +1,7 @@
+C:\Users\User\source\repos\DotNetConnectAzure\DotNetConnectAzure\bin\Debug\DotNetConnectAzure.exe.config
+C:\Users\User\source\repos\DotNetConnectAzure\DotNetConnectAzure\bin\Debug\DotNetConnectAzure.exe
+C:\Users\User\source\repos\DotNetConnectAzure\DotNetConnectAzure\bin\Debug\DotNetConnectAzure.pdb
+C:\Users\User\source\repos\DotNetConnectAzure\DotNetConnectAzure\obj\Debug\DotNetConnectAzure.csprojAssemblyReference.cache
+C:\Users\User\source\repos\DotNetConnectAzure\DotNetConnectAzure\obj\Debug\DotNetConnectAzure.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\DotNetConnectAzure\DotNetConnectAzure\obj\Debug\DotNetConnectAzure.exe
+C:\Users\User\source\repos\DotNetConnectAzure\DotNetConnectAzure\obj\Debug\DotNetConnectAzure.pdb
