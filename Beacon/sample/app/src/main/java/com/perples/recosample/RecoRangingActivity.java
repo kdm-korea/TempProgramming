@@ -76,9 +76,7 @@ public class RecoRangingActivity extends RecoActivity implements RECORangingList
     @Override
     protected void onResume() {
         super.onResume();
-
         mRangingListAdapter = new RecoRangingListAdapter(this);
-        //RECOBeacon recoBeacon = mRangedBeacons.get(position);
         mRegionListView = (ListView)findViewById(R.id.list_ranging);
         mRegionListView.setAdapter(mRangingListAdapter);
     }
@@ -107,23 +105,17 @@ public class RecoRangingActivity extends RecoActivity implements RECORangingList
         //Write the code when RECOBeaconManager is bound to RECOBeaconService
     }
 
-
     @Override   //TODO: This Method refresh beacon signel
     public void didRangeBeaconsInRegion(Collection<RECOBeacon> recoBeacons, RECOBeaconRegion recoRegion) {
         Log.i("RECORangingActivity", "didRangeBeaconsInRegion() region: " + recoRegion.getUniqueIdentifier() + ", number of beacons ranged: " + recoBeacons.size());
 
         if(recoBeacons.size() == 3){
             Point2D pos = TrilaterationPosition(recoBeacons);
-
-            //btnchk.getOffsetForPosition((float) pos.x, (float)pos.y);
-            txtview.setText("  X :: " + String.format("%.2f", (float) pos.x) + "   ");
+            txtview.setText("   X :: " + String.format("%.2f", (float) pos.x) + "   ");
             txtview.append("Y :: " + String.format("%.2f", (float) pos.y) + "\n");
-            //String.format("%.2f", recoBeacon.getAccuracy())
         }
-
         mRangingListAdapter.updateAllBeacons(recoBeacons);
         mRangingListAdapter.notifyDataSetChanged();
-
         //Write the code when the beacons in the region is received
     }
 
@@ -131,12 +123,9 @@ public class RecoRangingActivity extends RecoActivity implements RECORangingList
         ArrayList<RECOBeacon> array = new ArrayList<RECOBeacon>(recoBeacons);
         Trilateration trilateration = new Trilateration();
 
-        RECOBeacon recoBeacon = array.get(0);
-        RECOBeacon recoBeacon1 = array.get(1);
-        RECOBeacon recoBeacon2 = array.get(2);
-        Point2D set1 = new Point2D(0,5,recoBeacon.getAccuracy());
-        Point2D set2 = new Point2D(-3,-10,recoBeacon1.getAccuracy());
-        Point2D set3 = new Point2D(15,1,recoBeacon2.getAccuracy());
+        Point2D set1 = new Point2D(0,1,array.get(0).getAccuracy());
+        Point2D set2 = new Point2D(-1,-1,array.get(1).getAccuracy());
+        Point2D set3 = new Point2D(1,-1,array.get(2).getAccuracy());
         return trilateration.getTrilateration(set1, set2, set3);
     }
 
