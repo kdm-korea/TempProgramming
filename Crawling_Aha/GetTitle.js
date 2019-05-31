@@ -1,7 +1,7 @@
 
 var url = "https://www.a-ha.io/login?next=%2F";
-var id = "minerva_fa@naver.com";
-var pw = "tpdlzh3108";
+var id = "e-mail";
+var pw = "password";
 
 var casper = require('casper').create({verbose: true, logLevel: "debug"});
 
