@@ -5,16 +5,16 @@ namespace StatePattern
     class Program
     {
         static void Main(string[] args) {
-            Machine machine = new Machine();
+            Character character = new Character();
 
-            machine.Action(new Walk());
-            Console.WriteLine(machine.CurrentState().ToString());
+            character.Action(new Walk());
+            Console.WriteLine(character.ToString());
 
-            machine.Action(new Idle());
-            Console.WriteLine(machine.CurrentState().ToString());
+            character.Action(new Idle());
+            Console.WriteLine(character.ToString());
 
-            machine.Action(new Fight());
-            Console.WriteLine(machine.CurrentState().ToString());
+            character.Action(new Fight());
+            Console.WriteLine(character.ToString());
         }
     }
 }
